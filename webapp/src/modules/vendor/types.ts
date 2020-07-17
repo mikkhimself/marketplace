@@ -2,20 +2,16 @@ import * as decentraland from './decentraland'
 import * as superRare from './super_rare'
 import * as makersPlace from './makers_place'
 
-export enum Partner {
-  SUPER_RARE = 'super_rare'
-}
-
-enum Disabled {
+// TODO: Rename to Vendor
+export enum Vendors {
+  DECENTRALAND = 'decentraland',
+  SUPER_RARE = 'super_rare',
   MAKERS_PLACE = 'makers_place'
 }
 
-enum Base {
-  DECENTRALAND = 'decentraland'
+export const Disabled = {
+  MAKERS_PLACE: Vendors.MAKERS_PLACE
 }
-
-export type Vendors = Partner | Base | Disabled
-export const Vendors = { ...Partner, ...Base, ...Disabled }
 
 export type ContractName =
   | decentraland.ContractName
